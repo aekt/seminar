@@ -1,0 +1,245 @@
+#+TITLE: Seminar
+#+DATE: April 6, 2018
+
+* $0^{\text{th}}$
+** 
+*** New Deep Learning Techniques
+- IPAM workshop
+- February 5 - 9, 2018
+https://www.ipam.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule
+** 
+1. [[http://www.ipam.ucla.edu/abstract/?tid=14550&pcode=DLT2018][Emergence theory of deep learning]]
+   - Stefano Soatto (UCLA)
+2. [[http://www.ipam.ucla.edu/abstract/?tid=14548&pcode=DLT2018][What do neural net loss functions look like?]]
+   - Tom Goldstein (Maryland)
+** 
+*** Menu
+1. Infomation theory
+3. Emergence theory
+4. Loss landscape
+* Information theory
+** 
+*** A Mathematical Theory of Communication
+- Claude E. Shannon
+- Bell System Technical Journal (1948)
+- Important concepts
+  - information entropy
+  - redundancy
+** 
+*** Basis ideas
+1. Information entropy
+2. Conditional entropy
+3. Kullback-Leibler divergence
+4. Mutual information
+5. Data processing inequality
+** 
+*** Self-information, or surprisal
+$$I(m) = \log \left( \frac{1}{p(m)} \right) = -\log p(m)$$ 
+
+- $m$: message
+- $M$: message space
+- $p(m)$: $\mathrm{Pr}(M=m)$
+** 
+*** Justification
+1. for an event $\omega$
+   - $I(\omega) = f(p(\omega))$
+   - $I(\omega) = 0$ when $p(\omega) = 1$
+   - $I(\omega) > 0$ when $p(\omega) < 1$
+2. for two independent events $A$ and $B$
+   - $P(A \cap B) = P(A) \cdot P(B)$
+   - $I(A \cap B) = I(A) + I(B)$
+   - $f(P(A) \cdot P(B)) = f(P(A)) + f(P(B))$
+3. $f(x) = K \log(x)$ with $K < 0$
+** 
+*** Entropy
+$$\begin{aligned} H(M) & = E [-\log p(M)] \\ & = -\sum_{m \in M} p(m)
+\log p(m) \end{aligned}$$
+- Average self-information
+- Measure of uncertainty
+- Bits, trits, nats, Hartleys, ...
+** 
+*** Examples
+| distribution                                                        | entropy                                                |
+| $\begin{array}{c} p_i \geq 0 \\ \sum_{i=1}^{k} p_i = 1 \end{array}$ | $H(p_1, p_2, ..., p_k) = -\sum_{i=1}^{k} p_i \log p_i$ |
+| $p(m) = 1/M$                                                        | $H(M) = \log \vert M \vert$                            |
+** 
+*** [[https://en.wikipedia.org/wiki/Binary_entropy_function][Binary entropy function]] 
+[[https://upload.wikimedia.org/wikipedia/commons/2/22/Binary_entropy_plot.svg]]
+$$H(p, 1-p) = -p \log p - (1-p) \log (1-p)$$
+** 
+*** Joint entropy
+$$\begin{aligned} H(X, Y) & = E_{p(x, y)} [-\log p(X, Y)] \\ & = -
+\sum_{x, y} p(x, y) \log p(x,y) \end{aligned}$$
+- when $X$, $Y$ independent
+  - $H(X, Y) = H(X) + H(Y)$ 
+** 
+*** Conditional entropy
+$$\begin{aligned} H(Y|X) & = \sum_{x \in X} p(x) H(Y|X=x) \\ & =
+-\sum_{x \in X} p(x) \sum_{y \in Y} p(y|x) \log p(y|x) \\ & = \sum_{x,
+y} p(x, y) \log \frac{p(x)}{p(x, y)} \\ & = H(X, Y) - H(X)
+\end{aligned}$$
+- Basic property: $H(X, Y) = H(X) + H(Y|X)$
+** 
+*** Relative entropy
+$$\begin{aligned} KL(p || q) & = \sum_{x \in X} p(x) \log
+\frac{p(x)}{q(x)} \geq 0 \\ & = -\sum_{x \in X} p(x) \log q(x) +
+\sum_{x \in X} p(x) \log p(x) \\ & = E_{p} [-\log q(X)] + E_{p}[\log
+p(X)] \end{aligned}$$
+- Average additional bits
+  - assuming distribution $q$ when true one is $p$
+- Cross entropy $$H_{p, q}(X) = E_{p} [-\log q(x)] = H_{p}(X) + KL(p ||
+  q)$$
+# ** 
+# *** Example
+#     H(X) \leq \log \vert \Chi \vert
+** 
+*** Mutual information
+$$\begin{aligned} I(X; Y) & = \sum_{x \in X} \sum_{y \in Y} p(x, y)
+\log \frac{p(x, y)}{p(x) p(y)} \\ & = KL(p(x, y) || p(x) p(y)) \\ & =
+H(X) - H(X|Y) \\ & = H(Y) - H(Y|X) \\ &= H(X) + H(Y) - H(X, Y)
+\end{aligned}$$
+- Relative entropy from product to joint
+- Reduction in uncertainty (can't hurt)
+- Symmetry
+** 
+*** Conditional mutual information
+$$\begin{aligned} I(X; Y| Z) & = H(X| Z) - H(X| Y, Z) \\ & = E_{p(x,
+y, z)} \left[ \log \frac{p(X, Y| Z)}{p(X| Z) p(Y| Z)} \right]
+\end{aligned}$$
+** 
+*** Chain rules
+- Chain rule for entropy: $$H(X_1, X_2, ..., X_n) = \sum_{i=1}^{n}
+  H(X_i| X_{i-1}, ..., X_1)$$
+- Chain rule for information: $$I(X_1, X_2, ..., X_n; Y) =
+  \sum_{i=1}^{n} I(X_i; Y| X_{i-1}, ..., X_1)$$
+# - Chain rule for relative entropy: $$KL(p(x, y) || q(x, y)) =
+#   KL(p(x) || q(x)) + KL(p(y| x) || q(y| x))$$
+** 
+*** Markov chain
+- $X$, $Y$, $Z$ form a Markov chain $X \rightarrow Y \rightarrow Z$ if
+  $$p(z| y, x) = p(z| y)$$
+  - $X$, $Z$ conditionally independent given $Y$: $$p(x, z| y) = p(x|
+    y) p(z| y, x) = p(x| y) p(z| y)$$
+** 
+*** Data processing inequality
+If $X \rightarrow Y \rightarrow Z$, then $I(X; Y) \geq I(X; Z)$
+- $Y$ always contains more information about $X$
+- Proof: $$\begin{aligned} I(X; Y, Z) & = I(X; Z) + I(X; Y| Z) \\ & =
+  I(X; Y) + I(X; Z| Y) \end{aligned}$$
+  - $I(X; Y| Z) \geq 0$ (Non-negative)
+  - $I(X; Z| Y) = 0$ (Markov)
+  - $I(X; Y) \geq I(X; Z)$
+* Emergence theory
+** 
+1. Optimization
+   - heavily over-parametrized
+   - should overfit ([[https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff][bias-variance]] [[http://scott.fortmann-roe.com/docs/BiasVariance.html][tradeoff]])
+   - (yet) remarkable performance
+   - (even) without explicit regularization
+2. Representation learning
+   - insensitive to nuisances
+   - "disentangled" representation
+   - careful engineering of architecture
+** 
+If neither the architecture nor the loss function explicitly enforce
+/invariance/ and /disentangling/, how can these properties emerge
+consistently in deep networks trained by simple generic optimization?
+** 
+*** Settings
+$$x \rightarrow z \rightarrow y$$
+- $x$: data
+- $z$: representation
+- $y$: task
+- $n$: nuisance (to task) so $I(y; n) = 0$
+** 
+*** Properties of representations
+| 1. | Sufficient   | $I(y; z) = I(y; x)$ |
+| 2. | Minimal      | $I(x; z)$ small     |
+| 3. | Invariant    | $I(z; n) = 0$       |
+| 4. | Disentangled | $TC(z)$ small       |
+where $TC(z) = KL(p(z) || \prod_{i} p(z_i))$
+** 
+*** Proposition
+$$I(z; n) \leq I(z; x) - I(x; y)$$
+1. $(y, n) \rightarrow x \rightarrow z \Rightarrow I(z; y, n) \leq I(z; x)$
+2. $I(z; n) + I(z; y| n) = I(z; y, n)$
+3. $I(z; n) \leq I(z; x) - I(z; y| n)$
+4. $I(z; y| n) \geq I(z; y)$ because $$\begin{aligned} I(z; y| n) & =
+   H(y| n) - H(y| z, n) \\ & = H(y) - H(y| z, n) \\ & \geq H(y) - H(y|
+   z) = I(z; y) \end{aligned}$$
+5. $I(z; n) \leq I(z; x) - I(z; y) = I(z; x) - I(x; y)$
+** 
+*** (Cont'd)
+- There exists a nuisance $n$ such that $$I(z; n) = I(z; x) - I(x;
+  y) - \epsilon$$ where $\epsilon = I(z; y| n) - I(x; y)$ and $0 \leq
+  \epsilon \leq H(y| x)$
+*** Consequence
+- Constructing invariants
+  - by reducing information $z$ contains about $x$
+- Given sufficiency:
+  - invariance $\Leftrightarrow$ minimality
+** 
+*** More settings
+- $p(x, y, \theta, w) = p(\theta) p(x, y| \theta) q(w| x, y)$
+  - $\theta \sim p(\theta)$: prior distribution
+  - $\mathcal{D} = (x, y) \sim p(x, y| \theta)$: training dataset
+  - $q(w| x, y)$: distribution of weight
+- Want: $q(y| x, w) = p(y| x, w)$
+  - $q(y| x, w)$: inference distribution
+  - $p(y| x, w)$: optimal inference
+- Minimize: cross-entropy (loss) $H_{p, q}(y| x, w)$
+** 
+*** Minimal weights
+$$\begin{aligned} H_{p, q}(y| x, w) & = H(y| x, \theta) \\ & +
+I(\theta; y| x, w) \\ & + E_{x, w} [KL(p(y| x, w)||q(y| x, w))] \\ & -
+I(y; w| x, \theta) \end{aligned}$$
+1. Intrinsic error
+2. Sufficiency
+3. Efficiency
+4. Overfitting
+** 
+*** A new IBL
+$$\mathcal{L} = H_{p, q}(y| x, w) + I(y; w| x, \theta)$$
+- $I(y; w| x, \theta)$ hard to compute
+- Upper bound: $\beta I(w; D)$
+$$\mathcal{L}(q(w| \mathcal{D})) = H_{p, q} (y| x, w) + \beta I(w;
+D)$$
+- SGD implicitly enforces such regularity
+  - Fokker–Planck equation
+  - biased toward flat minima
+    - $\Rightarrow$ low information
+** 
+*** Duality bound
+- Suppose
+  - $z = Wx$ with some multiplicative noise
+  - Uncorrelated components of $x$, uniformly bounded kurtosis
+- Then there is a strictly increasing function $g(\alpha)$
+  s.t. $$g(\alpha) \leq \frac{I(z; x)+TC(z)}{\dim (z)} \leq
+  g(\alpha) + c$$ where $c = \mathcal{O}(1/\dim(x))$, $g(\alpha) =
+  \log(1-e^{-\alpha})/2$, and $\alpha = \exp{-I(W;
+  \mathcal{D})/\dim(W)}$
+** 
+*** Conclusion
+- Tight bound for one layer
+- Regularizing minimality in weights improves
+  - minimality, disentanglement in representation
+- (Easily) extended to multiple layers
+* Lastly
+** 
+*** Loss landscape
+https://arxiv.org/pdf/1712.09913v1.pdf
+** 
+*** Some results by Naftali Tishby
+"SGD optimization has two main phases"
+https://www.youtube.com/watch?v=P1A1yNsxMjc
+** 
+*** Readings
+- Understanding deep learning requires rethinking generalization
+  - https://arxiv.org/abs/1611.03530
+- Opening the Black Box of Deep Neural Networks via Information
+  - https://arxiv.org/abs/1703.00810
+- Emergence of Invariance and Disentanglement in Deep Representations
+  - https://arxiv.org/abs/1706.01350
+- Visualizing the Loss Landscape of Neural Nets
+  - https://arxiv.org/abs/1712.09913v1
+

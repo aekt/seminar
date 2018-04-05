@@ -1,0 +1,168 @@
+#+TITLE: Seminar
+#+DATE: April 6, 2018
+
+* $0^{\text{th}}$
+** 
+*** New Deep Learning Techniques
+- IPAM workshop
+- February 5 - 9, 2018
+https://www.ipam.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule
+** 
+1. Emergence theory of deep learning
+   - Stefano Soatto (UCLA)
+2. What do neural net loss functions look like?
+   - Tom Goldstein (Maryland)
+** 
+*** Menu
+1. Infomation theory
+3. Emergence theory
+4. Loss landscape
+* Information theory
+** 
+*** A Mathematical Theory of Communication
+- Claude E. Shannon
+- Bell System Technical Journal (1948)
+- Important concepts
+  - information entropy
+  - redundancy
+** 
+*** Basis ideas
+1. Self-information
+2. Information entropy
+3. Conditional entropy
+4. Mutual information
+5. Conditional mutual information
+6. Total correlation
+
+https://en.wikipedia.org/wiki/Quantities_of_information
+** 
+*** Self-information, or surprisal
+$$I(m) := \log \left( \frac{1}{p(m)} \right) = -\log p(m)$$ 
+
+- $m$: message
+- $M$: message space
+- $p(m)$: $\mathrm{Pr}(M=m)$
+** 
+*** Justification
+1. for an event $\omega$
+   - $I(\omega) = f(p(\omega))$
+   - $I(\omega) = 0$ when $p(\omega) = 1$
+   - $I(\omega) > 0$ when $p(\omega) < 1$
+2. for two independent events $A$ and $B$
+   - $P(A \cap B) = P(A) \cdot P(B)$
+   - $I(A \cap B) = I(A) + I(B)$
+   - $f(P(A) \cdot P(B)) = f(P(A)) + f(P(B))$
+3. $f(x) = K \log(x)$ with $K < 0$
+** 
+*** Entropy
+$$\begin{aligned} H(M) & := E [-\log p(M)] \\ & = -\sum_{m \in M} p(m)
+\log p(m) \end{aligned}$$
+- Average self-information
+- Measure of uncertainty
+- Bits, trits, nats, Hartleys, ...
+** 
+*** Examples
+| distribution                                                        | entropy                                                |
+| $\begin{array}{c} p_i \geq 0 \\ \sum_{i=1}^{k} p_i = 1 \end{array}$ | $H(p_1, p_2, ..., p_k) = -\sum_{i=1}^{k} p_i \log p_i$ |
+| $p(m) = 1/M$                                                        | $H(M) = \log \vert M \vert$                            |
+** 
+*** [[https://en.wikipedia.org/wiki/Binary_entropy_function][Binary entropy function]] 
+[[https://upload.wikimedia.org/wikipedia/commons/2/22/Binary_entropy_plot.svg]]
+$$H(p, 1-p) = -p \log p - (1-p) \log (1-p)$$
+** 
+*** Joint entropy
+$$\begin{aligned} H(X, Y) & := E_{p(x, y)} [-\log p(X, Y)] \\ & = -
+\sum_{x, y} p(x, y) \log p(x,y) \end{aligned}$$
+- when $X$, $Y$ independent
+  - $H(X, Y) = H(X) + H(Y)$ 
+** 
+*** Conditional entropy
+$$\begin{aligned} H(Y|X) & := \sum_{x \in X} p(x) H(Y|X=x) \\ & =
+-\sum_{x \in X} p(x) \sum_{y \in Y} p(y|x) \log p(y|x) \\ & = - \sum_{x,
+y} p(x, y) \log \frac{p(y)}{p(x, y)} \end{aligned}$$
+- Basic property: $$\begin{aligned} H(Y|X) & = H(X, Y) - H(X) \\ H(X,
+  Y) & = H(X) + H(Y|X) \end{aligned}$$
+** 
+*** Relative entropy
+$$\begin{aligned} KL(p || q) & := \sum_{x \in X} p(x) \log
+\frac{p(x)}{q(x)} \geq 0 \\ & = -\sum_{x \in X} p(x) \log q(x) +
+\sum_{x \in X} p(x) \log p(x) \\ & = E_{p} [-\log q(X)] + E_{p}[\log
+p(X)] \end{aligned}$$
+- Average additional bits
+  - assuming distribution $q$ when true one is $p$
+- Cross entropy $$H_{p, q}(X) = E_{p} [-\log q(x)] = H_{p}(X) + KL(p ||
+  q)$$
+# ** 
+*** Example
+    H(X) \leq \log \vert \Chi \vert
+** 
+*** Mutual information
+$$\begin{aligned} I(X; Y) & := \sum_{x \in X} \sum_{y \in Y} p(x, y)
+\log \frac{p(x, y)}{p(x) p(y)} \\ & = KL(p(x, y) || p(x) p(y)) \\ & =
+H(X) - H(X|Y) \\ & = H(Y) - H(Y|X) \\ &= H(X) + H(Y) - H(X, Y)
+\end{aligned}$$
+- Relative entropy from product to joint
+- Reduction in uncertainty (information can't hurt)
+- Symmetry
+** 
+*** Conditional mutual information
+$$\begin{aligned} I(X; Y| Z) & := H(X| Z) - H(X| Y, Z) \\ & = E_{p(x,
+y, z)} \left[ \log \frac{p(X, Y| Z)}{p(X| Z) p(Y| Z)} \right]
+\end{aligned}$$
+** 
+*** Chain rules
+- Chain rule for entropy: $$H(X_1, X_2, ..., X_n) = \sum_{i=1}^{n}
+  H(X_i| X_{i-1}, ..., X_1)$$
+- Chain rule for information: $$I(X_1, X_2, ..., X_n; Y) =
+  \sum_{i=1}^{n} I(X_i; Y| X_{i-1}, ..., X_1)$$
+# - Chain rule for relative entropy: $$KL(p(x, y) || q(x, y)) =
+#   KL(p(x) || q(x)) + KL(p(y| x) || q(y| x))$$
+
+** 
+*** Markov chain
+$X$, $Y$, $Z$ form a Markov chain $X \rightarrow Z \rightarrow Y$ if
+$$p(y| x, z) = p(y| z)$$
+- $X$, $Z$ conditionally independent given $Y$: $$p(x, y| z) = p(x| z)
+  p(y| x, z) = p(x| z) p(y| z)$$
+** 
+*** Data processing inequality
+If $X \rightarrow Z \rightarrow Y$, then $I(X; Z) \geq I(X; Y)$
+- $Y$ always contains more information about $X$
+- Proof: $$\begin{aligned} I(X; Z, Y) & = I(X; Z) + I(X; Y| Z) \\ & =
+  I(X; Y) + I(X; Z| Y) \end{aligned}$$
+  - $I(X; Y| Z) = 0$ (Markov)
+  - $I(X; Z| Y) \geq 0$ (Non-negative)
+  - $I(X; Z) \geq I(X; Y)$
+* working
+** 
+*** Information bottleneck
+* Emergence theory
+** 
+1. Optimization
+   - heavily over-parametrized
+   - should overfit ([[https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff][bias-variance]] [[http://scott.fortmann-roe.com/docs/BiasVariance.html][tradeoff]])
+   - (yet) remarkable performance
+   - (even) without explicit regularization
+2. Representation learning
+   - insensitive to nuisances
+   - "disentangled" representation
+   - careful engineering of architecture
+** 
+If neither the architecture nor the loss function explicitly enforce
+/invariance/ and /disentangling/, how can these properties emerge
+consistently in deep networks trained by simple generic optimization?
+* Loss landscape
+* Summary
+** 
+- some points to note
+** 
+*** Readings
+- Understanding deep learning requires rethinking generalization
+  - https://arxiv.org/abs/1611.03530
+- Opening the Black Box of Deep Neural Networks via Information
+  - https://arxiv.org/abs/1703.00810
+- Emergence of Invariance and Disentanglement in Deep Representations
+  - https://arxiv.org/abs/1706.01350
+- Visualizing the Loss Landscape of Neural Nets
+  - https://arxiv.org/abs/1712.09913v1
+
