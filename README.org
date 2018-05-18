@@ -4,7 +4,8 @@
 - Download (and extract) the latest version of [[https://github.com/hakimel/reveal.js/][reveal.js]] from https://github.com/hakimel/reveal.js/releases
 ** Instruction
 1. Rename the directory =reveal.js-x.x.x= as =reveal.js= and put it under your working directory
-2. Convert from your markup file into reveal.js file like this:
+2. Prepare you markup file, say =src.md= or =src.org=, depending on your choice
+3. Convert from your markup file into reveal.js file like this:
 : pandoc --to revealjs -V theme=serif --katex -s -o index.html src.org
 - =-V theme=serif=: variable of theme (default ones can be found [[https://github.com/hakimel/reveal.js/#theming][here]])
 - =--katex=: math typeset library (you may try =--mathjax= or others)
