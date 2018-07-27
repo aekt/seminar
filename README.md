@@ -16,13 +16,17 @@ https://github.com/aekt/seminar.git`
 
 ### Pandoc
 
-Other than Markdown, there are lots of formats, like Org-mode, supported
-by Pandoc. To support math rendering, `--mathjax` or `--katex` can be
-used. For incremental transitions, `-i` can be used. There are many more
-[details](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc).
+Other than Markdown, you may write your slides in any other formats
+supported by Pandoc. To use hosting service like [GitHub
+Pages](https://pages.github.com/), you may want to name your output as
+`index.html`.
 
-To use hosting service like [GitHub Pages](https://pages.github.com/),
-you may want to name your output as `index.html`.
+There are many settings for the slides. For example:
+
+- to support math rendering, `--mathjax` or `--katex` can be used;
+- incremental transitions by using `-i`;
+- and many more
+  [details](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc).
 
 Pandoc also supports quite a lot of
 [extensions](https://pandoc.org/MANUAL.html#extensions). For example,
