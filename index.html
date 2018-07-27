@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2018-04-06">
-  <title>Seminar</title>
+  <title>source</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -15,7 +14,7 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -27,412 +26,131 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js"></script><script>document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body);
-  });</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css" />
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide">
-  <h1 class="title">Seminar</h1>
-  <p class="date">April 6, 2018</p>
-</section>
 
-<section><section id="textth" class="title-slide slide level1"><h1><span class="math inline">\(0^{\text{th}}\)</span></h1></section><section id="section" class="slide level2">
-<h2></h2>
-<h3 id="new-deep-learning-techniques">New Deep Learning Techniques</h3>
-<ul>
-<li>IPAM workshop</li>
-<li>February 5 - 9, 2018</li>
-</ul>
-<p><a href="https://www.ipam.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule" class="uri">https://www.ipam.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule</a></p>
-</section><section id="section-1" class="slide level2">
-<h2></h2>
-<ol>
-<li><a href="http://www.ipam.ucla.edu/abstract/?tid=14550&amp;pcode=DLT2018">Emergence theory of deep learning</a>
-<ul>
-<li>Stefano Soatto (UCLA)</li>
-</ul></li>
-<li><a href="http://www.ipam.ucla.edu/abstract/?tid=14548&amp;pcode=DLT2018">What do neural net loss functions look like?</a>
-<ul>
-<li>Tom Goldstein (Maryland)</li>
-</ul></li>
-</ol>
-</section><section id="section-2" class="slide level2">
-<h2></h2>
-<h3 id="menu">Menu</h3>
-<ol>
-<li>Infomation theory</li>
-<li>Emergence theory</li>
-<li>Loss landscape</li>
-</ol>
+<section id="hello" class="slide level2">
+<h2>Hello</h2>
+</section>
+<section id="world" class="slide level2">
+<h2>World</h2>
+</section>
+<section><section id="title-page-must-not-have-any-content-until" class="title-slide slide level1"><h1>Title page (must not have any content until…</h1></section><section id="here" class="slide level2">
+<h2>Here</h2>
+<h3 id="then">Then</h3>
+<p>Put whatever you want</p>
+<p>They will</p>
+</section><section id="vertical" class="slide level2">
+<h2>Vertical</h2>
+<p>See?</p>
 </section></section>
-<section><section id="information-theory" class="title-slide slide level1"><h1>Information theory</h1></section><section id="section-3" class="slide level2">
-<h2></h2>
-<h3 id="a-mathematical-theory-of-communication">A Mathematical Theory of Communication</h3>
-<ul>
-<li>Claude E. Shannon</li>
-<li>Bell System Technical Journal (1948)</li>
-<li>Important concepts
-<ul>
-<li>information entropy</li>
-<li>redundancy</li>
-</ul></li>
-</ul>
-</section><section id="section-4" class="slide level2">
-<h2></h2>
-<h3 id="basis-ideas">Basis ideas</h3>
-<ol>
-<li>Information entropy</li>
-<li>Conditional entropy</li>
-<li>Kullback-Leibler divergence</li>
-<li>Mutual information</li>
-<li>Data processing inequality</li>
+<section><section id="maybe-useful-tips" class="title-slide slide level1"><h1>Maybe Useful Tips</h1></section><section id="basic" class="slide level2">
+<h2>Basic</h2>
+<p><code>_Italic_</code> <em>Italic</em></p>
+<p><code>__Bold__</code> <strong>Bold</strong></p>
+</section><section id="list" class="slide level2">
+<h2>List</h2>
+<p>Ordered list:</p>
+<ol type="1">
+<li>Foo</li>
+<li>Bar</li>
 </ol>
-</section><section id="section-5" class="slide level2">
-<h2></h2>
-<h3 id="self-information-or-surprisal">Self-information, or surprisal</h3>
-<p><span class="math display">\[I(m) = \log \left( \frac{1}{p(m)} \right) = -\log p(m)\]</span></p>
+<p>Unordered list:</p>
 <ul>
-<li><span class="math inline">\(m\)</span>: message</li>
-<li><span class="math inline">\(M\)</span>: message space</li>
-<li><span class="math inline">\(p(m)\)</span>: <span class="math inline">\(\mathrm{Pr}(M=m)\)</span></li>
+<li><p>A list item.</p>
+<p>With multiple paragraphs.</p></li>
+<li><p>Bar</p></li>
 </ul>
-</section><section id="section-6" class="slide level2">
-<h2></h2>
-<h3 id="justification">Justification</h3>
-<ol>
-<li>for an event <span class="math inline">\(\omega\)</span>
+</section><section class="slide level2">
+
+<p>Nested:</p>
 <ul>
-<li><span class="math inline">\(I(\omega) = f(p(\omega))\)</span></li>
-<li><span class="math inline">\(I(\omega) = 0\)</span> when <span class="math inline">\(p(\omega) = 1\)</span></li>
-<li><span class="math inline">\(I(\omega) &gt; 0\)</span> when <span class="math inline">\(p(\omega) &lt; 1\)</span></li>
+<li>Abacus
+<ul>
+<li>answer</li>
 </ul></li>
-<li>for two independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>
+<li>Bubbles
+<ol type="1">
+<li>bunk</li>
+<li>bupkis
 <ul>
-<li><span class="math inline">\(P(A \cap B) = P(A) \cdot P(B)\)</span></li>
-<li><span class="math inline">\(I(A \cap B) = I(A) + I(B)\)</span></li>
-<li><span class="math inline">\(f(P(A) \cdot P(B)) = f(P(A)) + f(P(B))\)</span></li>
+<li>BELITTLER</li>
 </ul></li>
-<li><span class="math inline">\(f(x) = K \log(x)\)</span> with <span class="math inline">\(K &lt; 0\)</span></li>
-</ol>
-</section><section id="section-7" class="slide level2">
-<h2></h2>
-<h3 id="entropy">Entropy</h3>
-<p><span class="math display">\[\begin{aligned} H(M) &amp; = E [-\log p(M)] \\ &amp; = -\sum_{m \in M} p(m)
-\log p(m) \end{aligned}\]</span></p>
-<ul>
-<li>Average self-information</li>
-<li>Measure of uncertainty</li>
-<li>Bits, trits, nats, Hartleys, …</li>
+<li>burper</li>
+</ol></li>
+<li>Cunning</li>
 </ul>
-</section><section id="section-8" class="slide level2">
-<h2></h2>
-<h3 id="examples">Examples</h3>
-<table>
-<tbody>
-<tr class="odd">
-<td>distribution</td>
-<td>entropy</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\begin{array}{c} p_i \geq 0 \\ \sum_{i=1}^{k} p_i = 1 \end{array}\)</span></td>
-<td><span class="math inline">\(H(p_1, p_2, ..., p_k) = -\sum_{i=1}^{k} p_i \log p_i\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(p(m) = 1/M\)</span></td>
-<td><span class="math inline">\(H(M) = \log \vert M \vert\)</span></td>
-</tr>
-</tbody>
-</table>
-</section><section id="section-9" class="slide level2">
-<h2></h2>
-<h3 id="binary-entropy-function"><a href="https://en.wikipedia.org/wiki/Binary_entropy_function">Binary entropy function</a></h3>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/2/22/Binary_entropy_plot.svg" /> <span class="math display">\[H(p, 1-p) = -p \log p - (1-p) \log (1-p)\]</span></p>
-</section><section id="section-10" class="slide level2">
-<h2></h2>
-<h3 id="joint-entropy">Joint entropy</h3>
-<p><span class="math display">\[\begin{aligned} H(X, Y) &amp; = E_{p(x, y)} [-\log p(X, Y)] \\ &amp; = -
-\sum_{x, y} p(x, y) \log p(x,y) \end{aligned}\]</span></p>
+</section><section id="blockquotes" class="slide level2">
+<h2>Blockquotes</h2>
+<blockquote>
+<p>Email-style angle brackets are used for blockquotes.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>And, they can be nested.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h4 id="headers-in-blockquotes">Headers in blockquotes</h4>
 <ul>
-<li>when <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> independent
-<ul>
-<li><span class="math inline">\(H(X, Y) = H(X) + H(Y)\)</span></li>
-</ul></li>
+<li>You can quote a list.</li>
+<li>Etc.</li>
 </ul>
-</section><section id="section-11" class="slide level2">
-<h2></h2>
-<h3 id="conditional-entropy">Conditional entropy</h3>
-<p><span class="math display">\[\begin{aligned} H(Y|X) &amp; = \sum_{x \in X} p(x) H(Y|X=x) \\ &amp; =
--\sum_{x \in X} p(x) \sum_{y \in Y} p(y|x) \log p(y|x) \\ &amp; = \sum_{x,
-y} p(x, y) \log \frac{p(x)}{p(x, y)} \\ &amp; = H(X, Y) - H(X)
-\end{aligned}\]</span></p>
+</blockquote>
+</section><section id="code-spans" class="slide level2">
+<h2>Code Spans</h2>
+<p><code>&lt;code&gt;</code> spans are delimited by backticks.</p>
+<p>You can include literal backticks like <code>`this`</code>.</p>
+</section><section id="preformatted-code-blocks" class="slide level2">
+<h2>Preformatted Code Blocks</h2>
+<p>This is a normal paragraph.</p>
+<pre><code>This is a preformatted
+code block.</code></pre>
+</section><section id="latex" class="slide level2">
+<h2><span class="math inline">\(\LaTeX\)</span></h2>
+<p>Equations like this <span class="math inline">\(\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}\)</span> should be <em>inline</em>.</p>
+<p>They can also be <em>displayed</em>: <span class="math display">\[
+ \frac{1}{\displaystyle 1+
+   \frac{1}{\displaystyle 2+
+   \frac{1}{\displaystyle 3+x}}} +
+ \frac{1}{1+\frac{1}{2+\frac{1}{3+x}}}
+\]</span></p>
+</section><section id="links" class="slide level2">
+<h2>Links</h2>
+<p>View the <a href="https://github.com/aekt/seminar">source</a></p>
+<p>Or, have a look at <a href="https://terrytao.wordpress.com/" title="By Terence Tao">What’s new</a></p>
+</section><section id="images" class="slide level2">
+<h2>Images</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/320px-Gull_portrait_ca_usa.jpg" /> <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" height="240px"></p>
+<p>You can resize images using raw HTML.</p>
+</section><section id="gifs" class="slide level2">
+<h2>GIFs</h2>
+<p><img data-src="http://media.giphy.com/media/4DCeH3WzKX89a/giphy.gif" /></p>
+</section><section id="emojis" class="slide level2">
+<h2>Emojis</h2>
+<p><span class="emoji" data-emoji="heart_eyes">😍</span></p>
+<p><span class="emoji" data-emoji="fist">✊</span> <span class="emoji" data-emoji="point_up">☝️</span> <span class="emoji" data-emoji="hand">✋</span> <span class="emoji" data-emoji="v">✌️</span> <span class="emoji" data-emoji="grin">😁</span></p>
+<p>Check this <a href="https://www.unicode.org/emoji/charts/emoji-list.html">list</a> <span class="emoji" data-emoji="dizzy_face">😵</span></p>
+<p>But not all are supported <span class="emoji" data-emoji="confused">😕</span></p>
+<p>(Remember to use <code>--from markdown+emoji</code><br />
+instead of <code>--from markdown</code><br />
+when using Pandoc)</p>
+</section><section id="extension" class="slide level2">
+<h2>Extension</h2>
 <ul>
-<li>Basic property: <span class="math inline">\(H(X, Y) = H(X) + H(Y|X)\)</span></li>
+<li>Emojis</li>
+<li>Footnotes</li>
+<li>Citations</li>
+<li><a href="https://pandoc.org/MANUAL.html#extensions">More</a></li>
 </ul>
-</section><section id="section-12" class="slide level2">
-<h2></h2>
-<h3 id="relative-entropy">Relative entropy</h3>
-<p><span class="math display">\[\begin{aligned} KL(p || q) &amp; = \sum_{x \in X} p(x) \log
-\frac{p(x)}{q(x)} \geq 0 \\ &amp; = -\sum_{x \in X} p(x) \log q(x) +
-\sum_{x \in X} p(x) \log p(x) \\ &amp; = E_{p} [-\log q(X)] + E_{p}[\log
-p(X)] \end{aligned}\]</span></p>
-<ul>
-<li>Average additional bits
-<ul>
-<li>assuming distribution <span class="math inline">\(q\)</span> when true one is <span class="math inline">\(p\)</span></li>
-</ul></li>
-<li>Cross entropy <span class="math display">\[H_{p, q}(X) = E_{p} [-\log q(x)] = H_{p}(X) + KL(p ||
- q)\]</span></li>
-</ul>
-</section><section id="section-13" class="slide level2">
-<h2></h2>
-<h3 id="mutual-information">Mutual information</h3>
-<p><span class="math display">\[\begin{aligned} I(X; Y) &amp; = \sum_{x \in X} \sum_{y \in Y} p(x, y)
-\log \frac{p(x, y)}{p(x) p(y)} \\ &amp; = KL(p(x, y) || p(x) p(y)) \\ &amp; =
-H(X) - H(X|Y) \\ &amp; = H(Y) - H(Y|X) \\ &amp;= H(X) + H(Y) - H(X, Y)
-\end{aligned}\]</span></p>
-<ul>
-<li>Relative entropy from product to joint</li>
-<li>Reduction in uncertainty (can't hurt)</li>
-<li>Symmetry</li>
-</ul>
-</section><section id="section-14" class="slide level2">
-<h2></h2>
-<h3 id="conditional-mutual-information">Conditional mutual information</h3>
-<p><span class="math display">\[\begin{aligned} I(X; Y| Z) &amp; = H(X| Z) - H(X| Y, Z) \\ &amp; = E_{p(x,
-y, z)} \left[ \log \frac{p(X, Y| Z)}{p(X| Z) p(Y| Z)} \right]
-\end{aligned}\]</span></p>
-</section><section id="section-15" class="slide level2">
-<h2></h2>
-<h3 id="chain-rules">Chain rules</h3>
-<ul>
-<li>Chain rule for entropy: <span class="math display">\[H(X_1, X_2, ..., X_n) = \sum_{i=1}^{n}
- H(X_i| X_{i-1}, ..., X_1)\]</span></li>
-<li>Chain rule for information: <span class="math display">\[I(X_1, X_2, ..., X_n; Y) =
- \sum_{i=1}^{n} I(X_i; Y| X_{i-1}, ..., X_1)\]</span></li>
-</ul>
-</section><section id="section-16" class="slide level2">
-<h2></h2>
-<h3 id="markov-chain">Markov chain</h3>
-<ul>
-<li><span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> form a Markov chain <span class="math inline">\(X \rightarrow Y \rightarrow Z\)</span> if <span class="math display">\[p(z| y, x) = p(z| y)\]</span>
-<ul>
-<li><span class="math inline">\(X\)</span>, <span class="math inline">\(Z\)</span> conditionally independent given <span class="math inline">\(Y\)</span>: <span class="math display">\[p(x, z| y) = p(x|
- y) p(z| y, x) = p(x| y) p(z| y)\]</span></li>
-</ul></li>
-</ul>
-</section><section id="section-17" class="slide level2">
-<h2></h2>
-<h3 id="data-processing-inequality">Data processing inequality</h3>
-<p>If <span class="math inline">\(X \rightarrow Y \rightarrow Z\)</span>, then <span class="math inline">\(I(X; Y) \geq I(X; Z)\)</span></p>
-<ul>
-<li><span class="math inline">\(Y\)</span> always contains more information about <span class="math inline">\(X\)</span></li>
-<li>Proof: <span class="math display">\[\begin{aligned} I(X; Y, Z) &amp; = I(X; Z) + I(X; Y| Z) \\ &amp; =
- I(X; Y) + I(X; Z| Y) \end{aligned}\]</span>
-<ul>
-<li><span class="math inline">\(I(X; Y| Z) \geq 0\)</span> (Non-negative)</li>
-<li><span class="math inline">\(I(X; Z| Y) = 0\)</span> (Markov)</li>
-<li><span class="math inline">\(I(X; Y) \geq I(X; Z)\)</span></li>
-</ul></li>
-</ul>
-</section></section>
-<section><section id="emergence-theory" class="title-slide slide level1"><h1>Emergence theory</h1></section><section id="section-18" class="slide level2">
-<h2></h2>
-<ol>
-<li>Optimization
-<ul>
-<li>heavily over-parametrized</li>
-<li>should overfit (<a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">bias-variance</a> <a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">tradeoff</a>)</li>
-<li>(yet) remarkable performance</li>
-<li>(even) without explicit regularization</li>
-</ul></li>
-<li>Representation learning
-<ul>
-<li>insensitive to nuisances</li>
-<li>&quot;disentangled&quot; representation</li>
-<li>careful engineering of architecture</li>
-</ul></li>
-</ol>
-</section><section id="section-19" class="slide level2">
-<h2></h2>
-<p>If neither the architecture nor the loss function explicitly enforce <em>invariance</em> and <em>disentangling</em>, how can these properties emerge consistently in deep networks trained by simple generic optimization?</p>
-</section><section id="section-20" class="slide level2">
-<h2></h2>
-<h3 id="settings">Settings</h3>
-<p><span class="math display">\[x \rightarrow z \rightarrow y\]</span></p>
-<ul>
-<li><span class="math inline">\(x\)</span>: data</li>
-<li><span class="math inline">\(z\)</span>: representation</li>
-<li><span class="math inline">\(y\)</span>: task</li>
-<li><span class="math inline">\(n\)</span>: nuisance (to task) so <span class="math inline">\(I(y; n) = 0\)</span></li>
-</ul>
-</section><section id="section-21" class="slide level2">
-<h2></h2>
-<h3 id="properties-of-representations">Properties of representations</h3>
-<table>
-<tbody>
-<tr class="odd">
-<td>1.</td>
-<td>Sufficient</td>
-<td><span class="math inline">\(I(y; z) = I(y; x)\)</span></td>
-</tr>
-<tr class="even">
-<td>2.</td>
-<td>Minimal</td>
-<td><span class="math inline">\(I(x; z)\)</span> small</td>
-</tr>
-<tr class="odd">
-<td>3.</td>
-<td>Invariant</td>
-<td><span class="math inline">\(I(z; n) = 0\)</span></td>
-</tr>
-<tr class="even">
-<td>4.</td>
-<td>Disentangled</td>
-<td><span class="math inline">\(TC(z)\)</span> small</td>
-</tr>
-</tbody>
-</table>
-<p>where <span class="math inline">\(TC(z) = KL(p(z) || \prod_{i} p(z_i))\)</span></p>
-</section><section id="section-22" class="slide level2">
-<h2></h2>
-<h3 id="proposition">Proposition</h3>
-<p><span class="math display">\[I(z; n) \leq I(z; x) - I(x; y)\]</span></p>
-<ol>
-<li><span class="math inline">\((y, n) \rightarrow x \rightarrow z \Rightarrow I(z; y, n) \leq I(z; x)\)</span></li>
-<li><span class="math inline">\(I(z; n) + I(z; y| n) = I(z; y, n)\)</span></li>
-<li><span class="math inline">\(I(z; n) \leq I(z; x) - I(z; y| n)\)</span></li>
-<li><span class="math inline">\(I(z; y| n) \geq I(z; y)\)</span> because <span class="math display">\[\begin{aligned} I(z; y| n) &amp; =
-  H(y| n) - H(y| z, n) \\ &amp; = H(y) - H(y| z, n) \\ &amp; \geq H(y) - H(y|
-  z) = I(z; y) \end{aligned}\]</span></li>
-<li><span class="math inline">\(I(z; n) \leq I(z; x) - I(z; y) = I(z; x) - I(x; y)\)</span></li>
-</ol>
-</section><section id="section-23" class="slide level2">
-<h2></h2>
-<h3 id="contd">(Cont'd)</h3>
-<ul>
-<li>There exists a nuisance <span class="math inline">\(n\)</span> such that <span class="math display">\[I(z; n) = I(z; x) - I(x;
- y) - \epsilon\]</span> where <span class="math inline">\(\epsilon = I(z; y| n) - I(x; y)\)</span> and <span class="math inline">\(0 \leq
- \epsilon \leq H(y| x)\)</span></li>
-</ul>
-<h3 id="consequence">Consequence</h3>
-<ul>
-<li>Constructing invariants
-<ul>
-<li>by reducing information <span class="math inline">\(z\)</span> contains about <span class="math inline">\(x\)</span></li>
-</ul></li>
-<li>Given sufficiency:
-<ul>
-<li>invariance <span class="math inline">\(\Leftrightarrow\)</span> minimality</li>
-</ul></li>
-</ul>
-</section><section id="section-24" class="slide level2">
-<h2></h2>
-<h3 id="more-settings">More settings</h3>
-<ul>
-<li><span class="math inline">\(p(x, y, \theta, w) = p(\theta) p(x, y| \theta) q(w| x, y)\)</span>
-<ul>
-<li><span class="math inline">\(\theta \sim p(\theta)\)</span>: prior distribution</li>
-<li><span class="math inline">\(\mathcal{D} = (x, y) \sim p(x, y| \theta)\)</span>: training dataset</li>
-<li><span class="math inline">\(q(w| x, y)\)</span>: distribution of weight</li>
-</ul></li>
-<li>Want: <span class="math inline">\(q(y| x, w) = p(y| x, w)\)</span>
-<ul>
-<li><span class="math inline">\(q(y| x, w)\)</span>: inference distribution</li>
-<li><span class="math inline">\(p(y| x, w)\)</span>: optimal inference</li>
-</ul></li>
-<li>Minimize: cross-entropy (loss) <span class="math inline">\(H_{p, q}(y| x, w)\)</span></li>
-</ul>
-</section><section id="section-25" class="slide level2">
-<h2></h2>
-<h3 id="minimal-weights">Minimal weights</h3>
-<p><span class="math display">\[\begin{aligned} H_{p, q}(y| x, w) &amp; = H(y| x, \theta) \\ &amp; +
-I(\theta; y| x, w) \\ &amp; + E_{x, w} [KL(p(y| x, w)||q(y| x, w))] \\ &amp; -
-I(y; w| x, \theta) \end{aligned}\]</span></p>
-<ol>
-<li>Intrinsic error</li>
-<li>Sufficiency</li>
-<li>Efficiency</li>
-<li>Overfitting</li>
-</ol>
-</section><section id="section-26" class="slide level2">
-<h2></h2>
-<h3 id="a-new-ibl">A new IBL</h3>
-<p><span class="math display">\[\mathcal{L} = H_{p, q}(y| x, w) + I(y; w| x, \theta)\]</span></p>
-<ul>
-<li><span class="math inline">\(I(y; w| x, \theta)\)</span> hard to compute</li>
-<li>Upper bound: <span class="math inline">\(\beta I(w; D)\)</span></li>
-</ul>
-<p><span class="math display">\[\mathcal{L}(q(w| \mathcal{D})) = H_{p, q} (y| x, w) + \beta I(w;
-D)\]</span></p>
-<ul>
-<li>SGD implicitly enforces such regularity
-<ul>
-<li>Fokker–Planck equation</li>
-<li>biased toward flat minima
-<ul>
-<li><span class="math inline">\(\Rightarrow\)</span> low information</li>
-</ul></li>
-</ul></li>
-</ul>
-</section><section id="section-27" class="slide level2">
-<h2></h2>
-<h3 id="duality-bound">Duality bound</h3>
-<ul>
-<li>Suppose
-<ul>
-<li><span class="math inline">\(z = Wx\)</span> with some multiplicative noise</li>
-<li>Uncorrelated components of <span class="math inline">\(x\)</span>, uniformly bounded kurtosis</li>
-</ul></li>
-<li>Then there is a strictly increasing function <span class="math inline">\(g(\alpha)\)</span> s.t. <span class="math display">\[g(\alpha) \leq \frac{I(z; x)+TC(z)}{\dim (z)} \leq
- g(\alpha) + c\]</span> where <span class="math inline">\(c = \mathcal{O}(1/\dim(x))\)</span>, <span class="math inline">\(g(\alpha) =
- \log(1-e^{-\alpha})/2\)</span>, and <span class="math inline">\(\alpha = \exp{-I(W;
- \mathcal{D})/\dim(W)}\)</span></li>
-</ul>
-</section><section id="section-28" class="slide level2">
-<h2></h2>
-<h3 id="conclusion">Conclusion</h3>
-<ul>
-<li>Tight bound for one layer</li>
-<li>Regularizing minimality in weights improves
-<ul>
-<li>minimality, disentanglement in representation</li>
-</ul></li>
-<li>(Easily) extended to multiple layers</li>
-</ul>
-</section></section>
-<section><section id="lastly" class="title-slide slide level1"><h1>Lastly</h1></section><section id="section-29" class="slide level2">
-<h2></h2>
-<h3 id="loss-landscape">Loss landscape</h3>
-<p><a href="https://arxiv.org/pdf/1712.09913v1.pdf" class="uri">https://arxiv.org/pdf/1712.09913v1.pdf</a></p>
-</section><section id="section-30" class="slide level2">
-<h2></h2>
-<h3 id="some-results-by-naftali-tishby">Some results by Naftali Tishby</h3>
-<p>&quot;SGD optimization has two main phases&quot; <a href="https://www.youtube.com/watch?v=P1A1yNsxMjc" class="uri">https://www.youtube.com/watch?v=P1A1yNsxMjc</a></p>
-</section><section id="section-31" class="slide level2">
-<h2></h2>
-<h3 id="readings">Readings</h3>
-<ul>
-<li>Understanding deep learning requires rethinking generalization
-<ul>
-<li><a href="https://arxiv.org/abs/1611.03530" class="uri">https://arxiv.org/abs/1611.03530</a></li>
-</ul></li>
-<li>Opening the Black Box of Deep Neural Networks via Information
-<ul>
-<li><a href="https://arxiv.org/abs/1703.00810" class="uri">https://arxiv.org/abs/1703.00810</a></li>
-</ul></li>
-<li>Emergence of Invariance and Disentanglement in Deep Representations
-<ul>
-<li><a href="https://arxiv.org/abs/1706.01350" class="uri">https://arxiv.org/abs/1706.01350</a></li>
-</ul></li>
-<li>Visualizing the Loss Landscape of Neural Nets
-<ul>
-<li><a href="https://arxiv.org/abs/1712.09913v1" class="uri">https://arxiv.org/abs/1712.09913v1</a></li>
-</ul></li>
-</ul>
+</section><section id="youtube" class="slide level2">
+<h2>YouTube</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1SMmc9gQmHQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>Simply copy the code from YouTube to embed video</p>
 </section></section>
     </div>
   </div>
@@ -447,11 +165,28 @@ D)\]</span></p>
       Reveal.initialize({
         // Push each slide change to the browser history
         history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
