@@ -1,1 +1,1 @@
-pandoc --to revealjs -V theme=serif --katex -s -o index.html src.org
+pandoc --from markdown+emoji --to revealjs -V theme=simple --mathjax -s -o index.html source.md
