@@ -10,7 +10,7 @@
 
 Put whatever you want
 
-They will
+They will be
 
 ## Vertical
 
